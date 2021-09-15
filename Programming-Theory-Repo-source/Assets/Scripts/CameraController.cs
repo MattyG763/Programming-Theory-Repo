@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
         transform.Rotate(new Vector3(transform.rotation.x, yRotation * rotationSpeed * Time.deltaTime, transform.rotation.z));
     }
 
-    void Update()
+    void FixedUpdate()
     {
         GetMovement();
         GetRotation();

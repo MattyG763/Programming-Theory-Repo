@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InteractableShapeParent : MonoBehaviour
 {
+
+    private float yPos;
+
     protected string shapeName;
     protected string description;
 
@@ -36,5 +39,15 @@ public class InteractableShapeParent : MonoBehaviour
     private void OnMouseDown()
     {
         DisplayText();
+    }
+
+    private void Start()
+    {
+        yPos = transform.position.y;
+    }
+
+    private void Update()
+    {
+        transform.position = new Vector3(transform.position.x, yPos + Mathf.Sin(5f * Time.time) * 0.2f, transform.position.z);
     }
 }
